@@ -74,7 +74,7 @@ function init() {
             message: questions[8]
         },
     ]).then(function(response){
-        console.log(generateMarkdown(response));
+        writeToFile('README.md', generateMarkdown(response));
     })
 }
 
