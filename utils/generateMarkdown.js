@@ -16,7 +16,13 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license == 'None'){
+    return "";
+  } else {
+    return "- [License](#license) <br />"
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -32,7 +38,7 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} ${renderLicenseBadge(data.liscence)}
+  return `# ${data.title} ${renderLicenseBadge(data.license)}
 
   ## Description
   
@@ -40,12 +46,12 @@ function generateMarkdown(data) {
 
   ## Table of Content
 
-  1. [Installation](##installation) 
-  2. [Usage](## Usage) 
-  3. [License](## License) 
-  4. [Contributing](##contributing)
-  5. [Tests](##tests)
-  6. [Questions](##questions) 
+  - [Installation](#installation) <br />
+  - [Usage](#usage) <br />
+  ${renderLicenseLink(data.license)}
+  - [Contributing](#contributing) <br />
+  - [Tests](#tests) <br />
+  - [Questions](#questions) 
   
   ## Installation
   
@@ -55,7 +61,7 @@ function generateMarkdown(data) {
   
   ${data.usage}
   
-  ${renderLicenseSection(data.liscence)}
+  ${renderLicenseSection(data.license)}
   
   ## Contributing
   
@@ -69,8 +75,8 @@ function generateMarkdown(data) {
   
   Github: [https://github.com/${data.username}](https://github.com/${
     data.username
-  })
-  Email: 
+  }) <br />
+  Email: [${data.email}](mailto:${data.email})
   
 `;
 }
