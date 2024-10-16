@@ -39,7 +39,7 @@ function init() {
         },
         {
             type: "input",
-            name: "insstallation",
+            name: "installation",
             message: questions[2]
         },
         {
@@ -61,7 +61,7 @@ function init() {
             type: "list",
             name: "liscence",
             message: questions[6],
-            choices: ['MIT', 'BSD']
+            choices: ['Apache 2.0', 'MIT', 'BSD2', 'BSD3', "None"]
         },
         {
             type: "input",
